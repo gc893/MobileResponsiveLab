@@ -1,0 +1,184 @@
+html {
+    box-sizing: border-box
+  }
+   
+   /* The Universal Selector */
+   *, /* All elements*/
+   *::before, /* All ::before pseudo-elements */
+   *::after { /* All ::after pseudo-elements */
+    /* height & width will now include border & padding by default
+       but can be over-ridden as needed */
+    box-sizing: inherit;
+   }
+
+   :root {
+    font-size: 62.5%;
+   }
+   
+   body {
+    background-color: #196159;
+   /* Use a system font, if none are available use an available sans-sarif   font */
+   display: flex;
+   flex-direction: column;
+   font-family: Helvetica;
+   height: 100vh; /* 100% of the height of the viewport */
+   margin: 0;
+   }
+   
+.description {
+       background-color: #fffffc;
+   }
+   
+.contact {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.contact .btn-group {
+    display: none;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    background-color:#ecebeb;
+    text-align: center;
+}
+
+.top {
+grid-column: span 4;
+}
+
+.bottom {
+    grid-column: span 4;
+}
+
+.profile-pic {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+
+.profile-pic img {
+    border: 5px solid #06d6a0;
+    border-radius: 50%;
+}
+
+.btn-call {
+    background-color: #06d6a0;
+}
+
+.btn-message {
+    background-color: #049F76;
+}
+
+.contact .btn, .description .btn {
+    color: white;
+    font-size: 3em;
+}
+
+.online-msg {
+    padding: 1em 1em 0;
+    color: gray;
+    margin: 0;
+}
+
+.stars {
+    color: #ffd166;
+    margin-bottom: 1em;
+    padding-top: 1em;
+}
+
+.stars .inactive {
+    color: gray;
+}
+
+.name h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    background-color: white;
+}
+
+.summary {
+    flex: 1;
+}
+
+.summary h3 {
+    margin-bottom: 1em;
+}
+
+.summary p {
+display: none;
+}
+
+.rate {
+    background-color: white;
+    padding-top: 1em;
+}
+
+.rate h3 {
+    margin: 0;
+}
+
+.rate p {
+    font-size: 1.5em;
+    color: rgba(128, 128, 128, 0.582);
+    margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+
+   body {
+    display: grid;
+    grid-template-columns: 100px 2fr 3fr 100px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "nav nav nav nav" 
+    "left aside main right"
+    "nav nav nav nav" 
+   }
+
+   .contact .btn-group {
+        display: inline-flex;
+    }
+
+    .description .btn-group {
+        display: none;
+    }
+
+    .summary p {
+        display: block;
+        font-size: 1.5em;
+        color: rgba(128, 128, 128, 0.582);
+        border-left: 2px solid #06d6a0;
+        padding-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    .description {
+        text-align: left;
+        padding: 4em 2em 0.5em;
+    }
+
+    .rate p {
+        margin-bottom: 0;
+    }
+
+    .name h1 {
+        background-color: unset;
+    }
+
+    .rate {
+        background-color: unset;
+        padding-top: 0;
+    }
+
+    .stars {
+        margin-bottom: 2em;
+        padding-top: 0;
+    }
+
+}
